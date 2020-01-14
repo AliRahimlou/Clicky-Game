@@ -116,10 +116,7 @@ class App extends Component {
   </div>
 </div>
 
-
-
-              
-               
+    
                 <div className="container">
                 <div className="row">
                 {this.state.matches.map(match => (
