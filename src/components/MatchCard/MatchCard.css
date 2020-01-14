@@ -1,6 +1,6 @@
 .card {
     background: #fff;
-    border-radius: 2px;
+    border-radius: 5px;
     box-shadow: 0 3px 6px #999, 0 3px 6px #999;
     text-align: left;
     justify-content: center;
@@ -11,13 +11,13 @@
     text-align: center;
     background: black;
     justify-content: center;  
-    /* margin: 10px; */
-    border: solid black 15px;   
+    border: solid black 10px;
+    border-radius: 5px;   
 }
 
 .card>.img-container>img {
     width: 150px;  
     height: 150px;   
     object-fit: cover;
-
+    border-radius: 2px;
 }
