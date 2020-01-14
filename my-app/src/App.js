@@ -6,7 +6,7 @@ import matches from "./matchcards.json";
 import "./App.css";
 
 let correctGuesses = 0;
-let bestScore = 0;
+let highScore = 0;
 let clickMessage = "Click on a character to gain points! Don't Click on the same one twice!!";
 
 class App extends Component {
@@ -15,7 +15,7 @@ class App extends Component {
     state = {
         matches,
         correctGuesses,
-        bestScore,
+        highScore,
         clickMessage
     };
 
@@ -32,7 +32,7 @@ class App extends Component {
         if (clickedMatch[0].clicked){
 
             console.log ("Correct Guesses: " + correctGuesses);
-            console.log ("Best Score: " + bestScore);
+            console.log ("Best Score: " + highScore);
 
             correctGuesses = 0;
             clickMessage = "Bummer! You already clicked on this one."
@@ -56,9 +56,9 @@ class App extends Component {
             
             clickMessage = "Keep going!";
 
-            if (correctGuesses > bestScore){
-                bestScore = correctGuesses;
-                this.setState({ bestScore });
+            if (correctGuesses > highScore){
+                highScore = correctGuesses;
+                this.setState({ highScore });
             }
 
             // Shuffle the array to be rendered in a random order
@@ -78,8 +78,8 @@ class App extends Component {
 
             // Egg on the user to play again
             clickMessage = "NO WAY!!! You got ALL of them!!! Now, Bet you can't do it again!";
-            bestScore = 12;
-            this.setState({ bestScore });
+            highScore = 12;
+            this.setState({ highScore });
             
             for (let i = 0 ; i < matches.length ; i++){
                 matches[i].clicked = false;
@@ -105,11 +105,12 @@ class App extends Component {
                     {this.state.clickMessage}
                 </h3>
                 
-                <h3 className="scoreSummary card-header">
-                    Correct Guesses: {this.state.correctGuesses} 
-                    <br />
-                    Best Score: {this.state.bestScore} 
-                </h3>
+                <h3 className="card-header">
+                    Correct Guesses: {this.state.correctGuesses}  </h3>
+
+                <h3 className="card-header"> 
+                High Score: {this.state.highScore} </h3>
+               
                 <div className="container">
                 <div className="row">
                 {this.state.matches.map(match => (
