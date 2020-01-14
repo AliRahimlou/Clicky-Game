@@ -99,17 +99,26 @@ class App extends Component {
     render() {
         return (
             <Wrapper>
-                <Title>Clicky-Game!</Title>
-        
-                <h3 className="scoreSummary">
-                    {this.state.clickMessage}
-                </h3>
-                
-                <h3 className="card-header">
-                    Correct Guesses: {this.state.correctGuesses}  </h3>
 
-                <h3 className="card-header"> 
-                High Score: {this.state.highScore} </h3>
+<div className="container">
+  <div className="row nav">
+    <div className="col-4">
+    <Title>Clicky-Game!</Title>
+    </div>
+    <div className="col-4 message">
+    {this.state.clickMessage}
+    </div>
+    <div className="col-4 score">
+    Correct Guesses: {this.state.correctGuesses} 
+    <br></br>
+    High Score: {this.state.highScore}
+    </div>
+  </div>
+</div>
+
+
+
+              
                
                 <div className="container">
                 <div className="row">

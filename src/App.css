@@ -1,16 +1,19 @@
-.scoreSummary {
-  width: 100%;
-  text-align: center;
-  margin-bottom: 20px;
-  /* color: blue; */
-}
-
 .row {
-  margin: 30px; 
+  margin: 20px; 
 }
 
-.card-header {
-  color: blue;
-  box-shadow: 0 3px 6px #999, 0 3px 6px #999;
-  
+
+.score{
+ text-align: right;
+ color: blue;
 }
+
+.message{
+  text-align: center;
+  font-size: 13pt;
+}
+
+/* .nav{
+  overflow: hidden;
+  position: sticky;
+} */
